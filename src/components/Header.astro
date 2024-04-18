@@ -1,0 +1,21 @@
+---
+import FontAwesomeIcon from "../reactComponents/Fontawesome";
+import Icon from "../reactComponents/Icons";
+import {mdiGithub, mdiLinkedin} from "@mdi/js";
+import {faXTwitter} from "@fortawesome/free-brands-svg-icons";
+---
+
+<header slot="header">
+    <span class="logo">DMarket</span>
+    <div class="socials">
+        <a href="#" target="_blank" referrerpolicy="no-referrer">
+            <FontAwesomeIcon icon={faXTwitter} client:only="react"/>
+        </a>
+        <a href="#" target="_blank" referrerpolicy="no-referrer">
+            <Icon path={mdiLinkedin} size={1} client:only="react"/>
+        </a>
+        <a href="#" target="_blank" referrerpolicy="no-referrer">
+            <Icon path={mdiGithub} size={1} className="text-green-500" client:only="react"/>
+        </a>
+    </div>
+</header>

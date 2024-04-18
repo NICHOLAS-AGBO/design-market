@@ -1,0 +1,7 @@
+body{
+  @apply text-white scroll-smooth antialiased forced-color-adjust-auto bg-gray-950;
+}
+*,::after,::before{ @apply box-border; }
+img,video,picture,iframe{
+  @apply max-w-full h-auto;
+}

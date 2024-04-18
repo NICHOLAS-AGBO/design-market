@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import "../styles/home.scss";
+import Header from "../components/Header.astro";
+import {Image} from "astro:assets";
+import me from "../img/nicholasagbo.jpg";
+import Icon from "../reactComponents/Icons";
+import {mdiCloudUpload, mdiImagePlusOutline} from "@mdi/js";
+---
+
+<Layout title="Design Market | Home" description="Simple project, where users upload their designs">
+    <Header/>
+<main>
+<section id="cover">
+    <div class="contents">
+        <h1><span>Welcome to design Market</span></h1>
+        <small class="author">Author: <span>
+            <Image src={me} alt="nicholas_agbo_a_web_developer"/></span> NICHOLAS AGBO</small>
+    </div>
+<form method="post" class="upload">
+    <label>
+        <input required type="url" placeholder="Paste image url here"/>
+        <button type="button">
+            <Icon path={mdiImagePlusOutline} size={1.5} client:only="react"/>
+        </button>
+        <button class="upload_btn">
+            <span>Upload</span>
+            <Icon path={mdiCloudUpload} size={1.5} client:only="react"/>
+        </button>
+    </label>
+</form>
+</section>
+</main>
+</Layout>
