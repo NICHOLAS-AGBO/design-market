@@ -29,6 +29,7 @@
     "@types/react-dom": "^18.2.22",
     "astro": "^4.5.2",
     "htmx.org": "^1.9.11",
+    "masonry-layout": "^4.2.2",
     "react": "18.3.0-canary-bb0944fe5-20240313",
     "react-dom": "^18.2.0",
     "sass": "^1.75.0",

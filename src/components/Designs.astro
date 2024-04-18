@@ -1,0 +1,41 @@
+---
+import {Image} from "astro:assets";
+import me from "../img/nicholasagbo.jpg";
+import d1 from "../designs/1.jpg";
+import d2 from "../designs/2.jpg";
+import d3 from "../designs/3.jpg";
+import d4 from "../designs/4.jpg";
+import d5 from "../designs/5.jpg";
+const options = JSON.stringify({
+    itemSelector: ".m-item",
+    // columnWidth: 200,
+    percentPosition: true,
+    gutter: 10,
+    horizontalOrder: true
+});
+---
+
+
+<section class="designs">
+    <div class="m-grid" data-masonry={options}>
+<div class="m-item">
+    <Image src={me} alt="me"/>
+</div>
+        <div class="m-item">
+    <Image src={d1} alt="me"/>
+</div>
+        <div class="m-item">
+    <Image src={d2} alt="me"/>
+</div>
+        <div class="m-item">
+    <Image src={d3} alt="me"/>
+</div>
+        <div class="m-item">
+    <Image src={d4} alt="me"/>
+</div>
+        <div class="m-item">
+    <Image src={d5} alt="me"/>
+</div>
+
+    </div>
+</section>

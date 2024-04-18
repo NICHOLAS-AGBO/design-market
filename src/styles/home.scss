@@ -1,6 +1,8 @@
+@use "sass:math" as math;
+
 #cover{
   @apply px-3 md:px-5 py-5 flex flex-col gap-y-4 justify-center items-center;
-  min-height: calc(100vh - theme("height.14"));
+  min-height: calc(100vh - theme("height.16"));
 
   .contents{ @apply flex flex-col gap-y-4 justify-center items-center max-w-screen-md lg:max-w-screen-lg; }
 
@@ -29,7 +31,8 @@
     @apply max-w-screen-sm w-full;
     label{ @apply flex justify-center items-center relative w-full; }
     input{
-      @apply bg-transparent text-white sm:text-lg w-full h-14 focus:shadow-none focus:outline-none focus:border-transparent;
+      @apply bg-transparent text-white sm:text-lg w-full h-14 focus:shadow-none
+      focus:outline-none focus:border-transparent pr-14;
       border-image: linear-gradient(
                       theme("colors.green.500") 20%,
                       theme("colors.blue.800") 40%,
@@ -46,7 +49,7 @@
         }
     }
     button[type]{
-      @apply absolute right-0 top-0 mt-2.5 mr-28 z-10 text-green-500 active:text-green-400;
+      @apply absolute right-0 top-0 mt-3.5 mr-24 sm:mr-28 z-10 text-green-500 active:text-green-400;
     }
     .upload_btn{
       @apply bg-green-600 active:bg-green-500 h-14 py-3 px-5 font-semibold flex items-center justify-center;
@@ -63,3 +66,19 @@ header{
   }
 }
 
+.designs{
+  @apply max-w-screen-lg p-5 mx-auto;
+
+  .m-item{
+    @apply p-1 bg-gray-800 mb-3 w-full;
+
+    @media (min-width: theme("screens.sm")) {
+      max-width: calc(50% - 10px);
+    }
+
+    @media (min-width: theme("screens.lg")) {
+      max-width: calc(#{math.div(100,3)}#{"%"} - 10px);
+    }
+
+  }
+}

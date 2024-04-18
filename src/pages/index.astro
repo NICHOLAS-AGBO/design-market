@@ -6,6 +6,8 @@ import {Image} from "astro:assets";
 import me from "../img/nicholasagbo.jpg";
 import Icon from "../reactComponents/Icons";
 import {mdiCloudUpload, mdiImagePlusOutline} from "@mdi/js";
+import Designs from "../components/Designs.astro";
+
 ---
 
 <Layout title="Design Market | Home" description="Simple project, where users upload their designs">
@@ -19,9 +21,9 @@ import {mdiCloudUpload, mdiImagePlusOutline} from "@mdi/js";
     </div>
 <form method="post" class="upload">
     <label>
-        <input required type="url" placeholder="Paste image url here"/>
+        <input required type="url" placeholder="Paste image url here or click on the icon"/>
         <button type="button">
-            <Icon path={mdiImagePlusOutline} size={1.5} client:only="react"/>
+            <Icon path={mdiImagePlusOutline} size={1.2} client:only="react"/>
         </button>
         <button class="upload_btn">
             <span>Upload</span>
@@ -31,4 +33,8 @@ import {mdiCloudUpload, mdiImagePlusOutline} from "@mdi/js";
 </form>
 </section>
 </main>
+
+<Designs/>
+
+
 </Layout>
