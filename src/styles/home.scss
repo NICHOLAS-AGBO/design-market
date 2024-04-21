@@ -1,8 +1,8 @@
 @use "sass:math" as math;
 
 #cover{
-  @apply px-3 md:px-5 py-5 flex flex-col gap-y-4 justify-center items-center;
-  min-height: calc(100vh - theme("height.16"));
+  @apply px-3 md:px-5 py-5 bg-gray-900 flex flex-col gap-y-4 justify-center items-center;
+  min-height: calc(100vh - theme("height.24"));
 
   .contents{ @apply flex flex-col gap-y-4 justify-center items-center max-w-screen-md lg:max-w-screen-lg; }
 
@@ -58,19 +58,18 @@
     }
   }
 }
+
 header{
   @apply w-full h-14 p-2 md:px-3 border-b border-b-gray-700 flex justify-between items-center text-lg;
   .logo{ @apply font-black text-2xl italic text-green-500; }
-  .socials{
-    @apply flex gap-1 items-center;
-  }
+  .sign-in:active svg{ @apply active:text-green-500; }
 }
 
 .designs{
-  @apply max-w-screen-lg p-5 mx-auto;
+  @apply max-w-screen-lg p-3 sm:p-5 mx-auto;
 
   .m-item{
-    @apply p-1 bg-gray-800 mb-3 w-full;
+    @apply p-1 bg-gray-800 mb-3 w-full border border-green-500;
 
     @media (min-width: theme("screens.sm")) {
       max-width: calc(50% - 10px);
@@ -80,5 +79,64 @@ header{
       max-width: calc(#{math.div(100,3)}#{"%"} - 10px);
     }
 
+  }
+}
+
+#footer{
+  @apply bg-gray-800 flex flex-col justify-center gap-5 flex-wrap mt-10;
+
+  .footer-contents{
+    @apply flex justify-between items-start flex-wrap gap-y-4 p-3;
+
+    & > div{
+      p{ @apply max-w-sm text-sm p-1; }
+      .author{ @apply underline font-medium text-gray-400 inline-block; }
+    }
+    .socials{
+      @apply flex gap-1 items-center;
+    }
+
+  }
+  .copyright{
+    @apply p-3 text-center text-sm text-green-500 font-semibold bg-gray-900;
+  }
+}
+
+#backdrop{
+  @apply fixed bg-black bg-opacity-15 px-3 flex justify-center items-center h-full w-full top-0 left-0 z-50 backdrop-blur-md;
+
+  .popup{
+    @apply bg-gray-800 max-w-md w-full px-3 sm:px-5 py-5 flex flex-col gap-y-5 relative;
+
+    .close{ @apply absolute top-2 right-3 p-2 active:text-green-500 text-3xl; }
+
+    h3{ @apply text-3xl font-bold text-center text-green-500 mt-10; }
+
+    #account{
+      @apply flex flex-col gap-y-3;
+
+      input{
+        @apply bg-transparent text-white sm:text-lg w-full h-14 focus:shadow-none
+        focus:outline-none focus:border-transparent;
+        border-image: linear-gradient(
+                        theme("colors.green.500") 20%,
+                        theme("colors.blue.800") 40%,
+                        theme("colors.green.500") 100%
+        ) 20;
+        border-width: 2px;
+        &:focus{
+          --tw-ring-color: transparent;
+        }
+        &::placeholder{
+          @media (max-width: theme("screens.sm")) {
+            @apply text-sm;
+          }
+        }
+      }
+    }
+    .login,.signup{ @apply bg-green-600 active:bg-green-500 p-3 w-full font-medium text-lg; }
+    .sign-google{ @apply bg-gray-700 active:bg-gray-600 flex justify-center items-center
+    gap-5 p-3 rounded-full font-medium; }
+    a{ @apply underline text-center; }
   }
 }

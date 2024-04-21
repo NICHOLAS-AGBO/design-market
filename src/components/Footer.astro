@@ -1,0 +1,35 @@
+---
+import {faXTwitter} from "@fortawesome/free-brands-svg-icons";
+import {mdiGithub, mdiLinkedin} from "@mdi/js";
+import FontAwesomeIcon from "../reactComponents/Fontawesome";
+import Icon from "../reactComponents/Icons";
+const year = new Date().getFullYear()
+---
+
+<footer id="footer" slot="footer">
+    <div class="footer-contents">
+        <div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Morbi viverra, nibh non sollicitudin volutpat, nisl nulla tincidunt velit, in eleifend diam tortor eget magna.
+
+                <a class="author" href="https://github.com/NICHOLAS-AGBO" target="_blank">
+                    <small>NICHOLAS AGBO</small></a>
+            </p>
+        </div>
+
+
+        <div class="socials">
+            <a href="#" target="_blank" referrerpolicy="no-referrer">
+                <FontAwesomeIcon icon={faXTwitter} size="lg" client:only="react"/>
+            </a>
+            <a href="#" target="_blank" referrerpolicy="no-referrer">
+                <Icon path={mdiLinkedin} size={1.2} client:only="react"/>
+            </a>
+            <a href="https://github.com/NICHOLAS-AGBO" target="_blank" referrerpolicy="no-referrer">
+                <Icon path={mdiGithub} size={1.2} className="text-green-500" client:only="react"/>
+            </a>
+        </div>
+    </div>
+    <div class="copyright"><small>{year} &COPY; Copyright. All rights reserved</small></div>
+</footer>

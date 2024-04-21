@@ -1,21 +1,12 @@
 ---
 import FontAwesomeIcon from "../reactComponents/Fontawesome";
-import Icon from "../reactComponents/Icons";
-import {mdiGithub, mdiLinkedin} from "@mdi/js";
-import {faXTwitter} from "@fortawesome/free-brands-svg-icons";
+import Icons from "../reactComponents/Icons";
+import {mdiAccountCircle} from "@mdi/js";
 ---
 
 <header slot="header">
     <span class="logo">DMarket</span>
-    <div class="socials">
-        <a href="#" target="_blank" referrerpolicy="no-referrer">
-            <FontAwesomeIcon icon={faXTwitter} client:only="react"/>
-        </a>
-        <a href="#" target="_blank" referrerpolicy="no-referrer">
-            <Icon path={mdiLinkedin} size={1} client:only="react"/>
-        </a>
-        <a href="https://github.com/NICHOLAS-AGBO" target="_blank" referrerpolicy="no-referrer">
-            <Icon path={mdiGithub} size={1} className="text-green-500" client:only="react"/>
-        </a>
-    </div>
+        <button class="sign-in" data-target="#pop-closed">
+            <Icons path={mdiAccountCircle} size={1.2} title="Google sign in" client:only="react"/>
+        </button>
 </header>
